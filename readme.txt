@@ -8,10 +8,12 @@ DBS Dependency Injection with bean scope Singleton & Prototype
 * Junit 4.12
 
 ###Design considerations
-All registered Beans will be in memory after BeanContext is initiated when Spring Container is loaded, meanwhile, beans injected inside these beans will be injected according to the way of injection.
+All registered Beans will be in memory after BeanContext is initiated when Spring Container is loaded, meanwhile, beans injected inside these beans will be injected with the scope according to the way of injection.
+Factory design patter is used.
 
 ### Limitation
 * Only support fields injection through @DIAutowire annotation and Bean Scope can support both Singleton and Prototype via @DIBean
+
 * Registered Beans should be loaded when framework is loaded rather than when application retrieve Beans.
 
 ### Usage
